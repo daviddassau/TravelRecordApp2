@@ -30,5 +30,16 @@ namespace TravelRecordApp2
                 postListView.ItemsSource = posts;  // Helps to display the list of Posts on the History Page
             }
         }
+
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            var selectedPost = postListView.SelectedItem as Post;
+
+            // Navigates to Post Details Page if the selected post is not null
+            if (selectedPost != null)
+            {
+                Navigation.PushAsync(new PostDetailPage(selectedPost));
+            }
+        }
     }
 }

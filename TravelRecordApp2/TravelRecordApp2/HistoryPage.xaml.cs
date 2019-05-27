@@ -27,6 +27,7 @@ namespace TravelRecordApp2
             {
                 conn.CreateTable<Post>();
                 var posts = conn.Table<Post>().ToList();
+                postListView.ItemsSource = posts;  // Helps to display the list of Posts on the History Page
             }
         }
     }
